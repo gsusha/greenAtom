@@ -1,0 +1,152 @@
+CRUD:
+  Список: api/item/list
+  Создание: api/item/create
+  Деталка: api/item/detail?id=0
+  Удаление: api/item/delete?id=0
+
+# Админка:
+Видим мероприятия и кнопку создания:
+  Запрос: api/event/list
+  Триггер: onReady
+  Ответ: {
+    events: [
+      {
+        id: 0,
+        name: "",
+        date: ""
+      },
+    ],
+  }
+  Действия:
+    - Создание
+    - Деталка
+
+Создание мероприятия:
+  Запрос: api/event/new
+  Триггер: onClick
+  Тело: {
+    name: "",
+    date: "",
+  }
+  Ответ: {
+    id: 0,
+    name: "",
+    date: "",
+  }
+
+Деталка мероприятия:
+  - Запрос:
+      Адрес: api/event/detail?id=0
+      Триггер: onReady
+      Ответ: {
+        id: 0,
+        name: "",
+        date: "",
+      }
+
+  - Запрос:
+    Адрес: api/person/list
+    Триггер: onReady
+    Ответ: {
+      persons: [
+        {
+          id: 0,
+          name: "",
+          phone: "",
+          telegram: "",
+          specialization: "",
+          inviterId: 0,
+        }
+      ],
+    }
+
+Деталка пользователя:
+  Запрос: api/person/detail?id=0
+  Триггер: onReady
+  Ответ: {
+    person: {
+      id: 0,
+      name: "",
+      phone: "",
+      telegram: "",
+      specialization: "",
+      inviterId: 0,
+      event: {
+        id: 0,
+        name: "",
+        date: ""
+      },
+      task1: {
+        id: 0,
+        answer: "",
+        task: {
+          id: 0,
+          question: "",
+          description: "",
+          answer: ""
+        },
+      },
+      task2: { },
+      task3: { },
+      task4: { },
+      task5: { },
+      task6: { },
+    },
+  }
+
+# Юзер
+Сканируем код и видим первую форму:
+  Открытие формы: api/open_form?id=0
+  Запрос: api/specialization/list
+  Триггер: onReady
+  Ответ: {
+    specializations: [
+      "ESB Support",
+      "SUPPORT",
+      "SAP Express",
+      "WEB",
+      "JavaScript",
+      "1С"
+    ],
+  }
+  Действия:
+    - Отправить:
+        Запрос: api/person/create
+        Триггер: onClick
+        Тело: {
+          name: "",
+          phone: "",
+          telegram: "",
+          specialization: "",
+          eventId: 0
+        }
+        Ответ: {
+          personId: 0,
+          tasks: [
+            {
+              id: 0,
+              question:
+            },
+            { },
+            { },
+            { },
+            { },
+            { }
+          ]
+        }
+        Действия:
+          - Отправить:
+              Запрос: api/answer/new
+              Триггер: onClick
+              Тело: {
+                personId: 0,
+                tasks: [
+                  {
+                    taskId: 0,
+                    answer: "",
+                  },
+                ],
+              }
+}
+
+
