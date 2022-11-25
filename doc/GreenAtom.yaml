@@ -81,7 +81,7 @@ CRUD:
         answer: "",
         task: {
           id: 0,
-          question: "",
+          title: "",
           description: "",
           answer: ""
         },
@@ -125,14 +125,19 @@ CRUD:
           tasks: [
             {
               id: 0,
-              question:
+              title: "",
+              description: "",
+              variant1: "",
+              variant2: "",
+              variant3: "",
+              variant4: "",
             },
             { },
             { },
             { },
             { },
-            { }
-          ]
+            { },
+          ],
         }
         Действия:
           - Отправить:
