@@ -1,0 +1,23 @@
+@import '../../utils/colors';
+
+.button-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.button {
+  color: #fff;
+  background: $lightGreen;
+  font-weight: bold;
+  text-decoration: none;
+  padding: 12px 48px;
+  display: flex;
+  align-items: center;
+
+  div {
+    display: flex;
+    align-self: end;
+    margin-left: 8px;
+  }
+}

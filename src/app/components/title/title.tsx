@@ -1,12 +1,17 @@
 import './styles.scss';
-import React from 'react';
+import React, { CSSProperties } from 'react';
 
 interface Props {
+  style?: CSSProperties;
   children: string;
 }
 
-function Title({ children }: Props) {
-  return <div className="title">{children}</div>;
+function Title({ style, children }: Props) {
+  return (
+    <div className="title" style={style}>
+      {children}
+    </div>
+  );
 }
 
 export default Title;

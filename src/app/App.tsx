@@ -5,6 +5,8 @@ import UserMain from './pages/user/';
 import AdminMain from './pages/admin/';
 import UserLayout from './layout/user/UserLayout';
 import './assets/fonts/fonts.css';
+import imgStart from './assets/images/user_start.png';
+// import imgEnd from './assets/images/user_end.jpg';
 
 function App() {
   return (
@@ -12,7 +14,7 @@ function App() {
       <Route
         path="/"
         element={
-          <UserLayout>
+          <UserLayout img={imgStart}>
             <UserMain />
           </UserLayout>
         }

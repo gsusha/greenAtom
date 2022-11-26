@@ -1,0 +1,18 @@
+.user-layout-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.user-layout {
+  padding: 46px 30px;
+}
+
+.user-layout-img {
+  width: 100vw;
+  flex: 1 1 50%;
+
+  img {
+    width: 100%;
+    object-fit: cover;
+  }
+}
