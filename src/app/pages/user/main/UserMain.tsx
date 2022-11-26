@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { useEffect, useState } from 'react';
 import Title from '../../../components/title/title';
 import Button from '../../../components/button/button';
 import { CgArrowLongRight } from 'react-icons/cg';
@@ -6,11 +7,10 @@ import logo from '../../../assets/images/greenlab_logo.svg';
 import './styles.scss';
 import { useAppDispatch, useAppSelector } from '../../../store/hooks';
 import { useParams } from 'react-router-dom';
-import { useEffect, useState } from 'react';
 import { getDetailEvent } from './store/mainSlice';
-import { Circles } from 'react-loader-spinner';
 import imgStart from '../../../assets/images/user_start.png';
 import UserLayout from '../../../layout/user/UserLayout';
+import Loader from '../../../components/loader/loader';
 
 function UserMain() {
   const dispatch = useAppDispatch() as any;
@@ -39,7 +39,11 @@ function UserMain() {
   }, [dispatch, params]);
 
   if (loading) {
-    return <Circles />;
+    return <Loader />;
+  }
+
+  {
+    console.log(event);
   }
 
   return (
