@@ -13,7 +13,7 @@ import UserLayout from '../../../layout/user/UserLayout';
 import Loader from '../../../components/loader/loader';
 
 function UserMain() {
-  const dispatch = useAppDispatch() as any;
+  const dispatch = useAppDispatch();
   const params = useParams() as { id: string };
 
   const [loading, setLoading] = useState(true);
@@ -21,7 +21,9 @@ function UserMain() {
 
   // eslint-disable-next-line @typescript-eslint/ban-ts-comment
   // @ts-ignore
-  const event = useAppSelector(({ event }) => event);
+  const event = useAppSelector(({ eventDetail }) => eventDetail.event);
+
+  console.log(event);
 
   const eventId = '2';
 

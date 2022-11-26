@@ -21,9 +21,7 @@ middlewares.push(logger);
 const store = configureStore({
   // eslint-disable-next-line @typescript-eslint/ban-ts-comment
   // @ts-ignore
-  reducer: {
-    pageReducers,
-  },
+  reducer: pageReducers,
   // eslint-disable-next-line @typescript-eslint/ban-ts-comment
   // @ts-ignore
   middleware: (getDefaultMiddleware) =>

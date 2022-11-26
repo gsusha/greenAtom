@@ -7,15 +7,13 @@ export const getDetailEvent = createAsyncThunk('event', async (id: string) => {
   return await Api.getData(Paths.EVENT_DETAIL, { key: 'id', id: id });
 });
 
-interface EventsState {
-  event: Event;
-}
-
-const initialState: EventsState = {
+const initialState: Event = {
   // eslint-disable-next-line @typescript-eslint/ban-ts-comment
   // @ts-ignore
   event: {
+    id: '',
     name: '',
+    date: '',
   },
 };
 
