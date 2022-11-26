@@ -1,12 +1,11 @@
 import { configureStore } from '@reduxjs/toolkit';
 import Actions, { IAction } from './actions';
-import { Action } from 'redux';
 
 export const initialState = {
   persons: [],
 };
 
-const reducer = (state = initialState, action: IAction<any>) => {
+const reducer = (state = initialState, action: IAction<never>) => {
   switch (action.type) {
     case Actions.GET_EVENTS:
       return { value: action.payload };
@@ -17,7 +16,7 @@ const reducer = (state = initialState, action: IAction<any>) => {
 };
 
 const store = configureStore({
-  reducer: reducer,
+  reducer: () => reducer(initialState, { type: '' }),
 });
 
 export default store;
