@@ -4,6 +4,8 @@ import Api from '../../../../api/api';
 import Paths from '../../../../store/paths';
 
 export const getDetailEvent = createAsyncThunk<Event, string>('event/getDetail', async (id: string, { dispatch }) => {
+  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+  // @ts-ignore
   return await Api.getData(Paths.EVENT_DETAIL, { key: 'id', id: id });
 });
 
