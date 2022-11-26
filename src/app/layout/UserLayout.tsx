@@ -1,15 +1,17 @@
+import * as React from "react"
+import {ReactNode} from "react"
 import * as PropTypes from 'prop-types'
 
-UserLayout.propTypes = {
-  children: PropTypes.node,
-};
+interface Props {
+    children?: ReactNode
+}
 
-function UserLayout({ children }) {
-  return(
-    <div style={{'padding': '25px'}}>
-      {children}
-    </div>
-  );
+function UserLayout({children}: Props) {
+    return (
+        <div style={{'padding': '25px'}}>
+            {children}
+        </div>
+    );
 }
 
 export default UserLayout;

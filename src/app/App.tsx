@@ -1,8 +1,9 @@
+import * as React from "react"
 import {Route, Routes} from 'react-router-dom';
 import './App.css';
-import UserMain from "./pages/user/index.tsx";
-import AdminMain from "./pages/admin/index.tsx";
-import UserLayout from "./layout/UserLayout.tsx";
+import UserMain from "./pages/user";
+import AdminMain from "./pages/admin";
+import UserLayout from "./layout/UserLayout";
 
 function App() {
     return (
@@ -10,7 +11,7 @@ function App() {
             <Route path='/' element=<UserLayout><UserMain/></UserLayout>/>
             <Route path='/admin' element=<AdminMain/>/>
         </Routes>
-    );
+    )
 }
 
 export default App;
