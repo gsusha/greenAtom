@@ -1,13 +1,16 @@
 import * as React from 'react';
 import { Route, Routes } from 'react-router-dom';
 import './App.scss';
-import UserMain from './pages/user/';
 import AdminMain from './pages/admin/';
 import UserLayout from './layout/user/UserLayout';
 import './assets/fonts/fonts.css';
 import imgStart from './assets/images/user_start.png';
-
-// import imgEnd from './assets/images/user_end.jpg';
+import imgEnd from './assets/images/user_end.jpg';
+import UserMain from './pages/user/main/UserMain';
+import FirstStep from './pages/user/first_step/FirstStep';
+import SecondStep from './pages/user/second_step/SecondStep';
+import ThirdStep from './pages/user/third_step/ThirdStep';
+import UserEnd from './pages/user/end/UserEnd';
 
 function App() {
   return (
@@ -17,6 +20,38 @@ function App() {
         element={
           <UserLayout img={imgStart}>
             <UserMain />
+          </UserLayout>
+        }
+      />
+      <Route
+        path="/first"
+        element={
+          <UserLayout>
+            <FirstStep />
+          </UserLayout>
+        }
+      />
+      <Route
+        path="/second"
+        element={
+          <UserLayout>
+            <SecondStep />
+          </UserLayout>
+        }
+      />
+      <Route
+        path="/third"
+        element={
+          <UserLayout>
+            <ThirdStep />
+          </UserLayout>
+        }
+      />
+      <Route
+        path="/end"
+        element={
+          <UserLayout img={imgEnd}>
+            <UserEnd />
           </UserLayout>
         }
       />

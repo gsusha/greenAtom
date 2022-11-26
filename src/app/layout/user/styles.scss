@@ -5,14 +5,15 @@
 
 .user-layout {
   padding: 46px 30px;
+  flex-grow: 2;
 }
 
 .user-layout-img {
   width: 100vw;
-  flex: 1 1 50%;
 
   img {
     width: 100%;
+    max-height: 50vh;
     object-fit: cover;
   }
 }
