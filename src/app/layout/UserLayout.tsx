@@ -6,7 +6,7 @@ UserLayout.propTypes = {
 
 function UserLayout({ children }) {
   return(
-    <div>
+    <div style={{'padding': '25px'}}>
       {children}
     </div>
   );
