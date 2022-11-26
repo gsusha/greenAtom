@@ -5,12 +5,12 @@ interface Props {
   children: string;
 }
 
-function Title({ style, children }: Props) {
+function Subtitle({ style, children }: Props) {
   return (
-    <div className="title" style={style}>
+    <div className="subtitle" style={style}>
       {children}
     </div>
   );
 }
 
-export default Title;
+export default Subtitle;
