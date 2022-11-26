@@ -3,10 +3,11 @@ import Title from '../../../components/title/title';
 import Progress from '../../../components/progress/progress';
 import Button from '../../../components/button/button';
 import { CgArrowLongRight } from 'react-icons/cg';
+import UserLayout from '../../../layout/user/UserLayout';
 
 function FirstStep() {
   return (
-    <div>
+    <UserLayout>
       <Title style={{ marginBottom: 10 }}>Шаг 1/3</Title>
       <Progress step={1} />
       <div className="description" style={{ marginBottom: 22 }}>
@@ -16,7 +17,7 @@ function FirstStep() {
         И выбери <span>программу подготовки</span>, которая тебе интересна:
       </div>
       <Button name="Дальше" to="/second" icon={<CgArrowLongRight />} />
-    </div>
+    </UserLayout>
   );
 }
 

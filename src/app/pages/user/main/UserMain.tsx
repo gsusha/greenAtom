@@ -9,6 +9,8 @@ import { useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import { getDetailEvent } from './store/mainSlice';
 import { Circles } from 'react-loader-spinner';
+import imgStart from '../../../assets/images/user_start.png';
+import UserLayout from '../../../layout/user/UserLayout';
 
 function UserMain() {
   const dispatch = useAppDispatch() as any;
@@ -41,16 +43,18 @@ function UserMain() {
   }
 
   return (
-    <div className="user-main-wrapper">
-      <img src={logo} alt="IT стажировки Росатома" />
-      <Title style={{ marginBottom: 22, alignSelf: 'start' }}>{event ? event.name : ''}</Title>
-      <div className="description" style={{ marginBottom: 44 }}>
-        Заполни форму и получи возможность начать карьеру в <span>крупной цифровой компании </span>
-        ещё во время обучения в университете
-      </div>
+    <UserLayout img={imgStart}>
+      <div className="user-main-wrapper">
+        <img src={logo} alt="IT стажировки Росатома" />
+        <Title style={{ marginBottom: 22, alignSelf: 'start' }}>{event ? event.name : ''}</Title>
+        <div className="description" style={{ marginBottom: 44 }}>
+          Заполни форму и получи возможность начать карьеру в <span>крупной цифровой компании </span>
+          ещё во время обучения в университете
+        </div>
 
-      <Button name="Начать" to="/first" icon={<CgArrowLongRight />} />
-    </div>
+        <Button name="Начать" to="/first" icon={<CgArrowLongRight />} />
+      </div>
+    </UserLayout>
   );
 }
 
