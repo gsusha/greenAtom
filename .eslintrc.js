@@ -1,22 +1,23 @@
 module.exports = {
   env: {
     es2021: true,
-    browser: true
+    browser: true,
   },
   extends: [
-      'eslint:recommended',
-      'plugin:@typescript-eslint/recommended'
+    'eslint:recommended',
+    'plugin:@typescript-eslint/recommended',
+    'prettier',
   ],
   parser: '@typescript-eslint/parser',
   parserOptions: {
     ecmaVersion: 'latest',
-    sourceType: 'module'
+    sourceType: 'module',
   },
   plugins: [
-      '@typescript-eslint'
+    '@typescript-eslint',
   ],
   settings: {
-   'import/resolver': {
+    'import/resolver': {
       node: {
         extensions: ['.js', '.jsx', '.ts', '.tsx'],
         moduleDirectory: ['node_modules', 'src/'],
