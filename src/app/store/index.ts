@@ -12,6 +12,12 @@ import rootReducer from './rootReducer';
 
 const middlewares: any[] = [];
 
+// eslint-disable-next-line @typescript-eslint/no-var-requires
+const { createLogger } = require(`redux-logger`);
+const logger = createLogger({ collapsed: (getState: any, action: any, logEntry: { error: any }) => !logEntry.error });
+
+middlewares.push(logger);
+
 const store = configureStore({
   // eslint-disable-next-line @typescript-eslint/ban-ts-comment
   // @ts-ignore

@@ -26,7 +26,7 @@ const mainSlice = createSlice({
   initialState,
   reducers: {},
   extraReducers: {
-    [getDetailEvent.fulfilled.toString()]: (state, action) => ({ ...state, event: action.payload }),
+    [getDetailEvent.fulfilled.toString()]: (state, action) => ({ ...state, event: action.payload?.data }),
   },
 });
 

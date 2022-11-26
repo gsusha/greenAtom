@@ -42,10 +42,6 @@ function UserMain() {
     return <Loader />;
   }
 
-  {
-    console.log(event);
-  }
-
   return (
     <UserLayout img={imgStart}>
       <div className="user-main-wrapper">
