@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { Route, Routes } from 'react-router-dom';
-import './App.css';
+import './App.scss';
 import UserMain from './pages/user/';
 import AdminMain from './pages/admin/';
 import UserLayout from './layout/user/UserLayout';
