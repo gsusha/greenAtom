@@ -66,8 +66,7 @@ class JwtService extends EventEmitter {
     super();
     this.axios = axios.create();
     this.axios.defaults.baseURL = apiConfig.apiUrl;
-    this.axios.defaults.headers.common['Access-Control-Allow-Origin'] = '*';
-    this.axios.defaults.headers.common['Content-Type'] = 'application/x-www-form-urlencoded';
+    this.axios.defaults.headers.common['Content-Type'] = 'application/json';
   }
 
   public axios;

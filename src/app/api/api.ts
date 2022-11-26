@@ -1,16 +1,22 @@
 import JwtService from './jwtService';
 
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
-// @ts-ignore
-export default function apiMakeRequest<T>(
-  operationName: string,
-  query: { id: string },
-  // eslint-disable-next-line @typescript-eslint/ban-types
-  variables?: Object
-): Promise<T> {
-  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-  // @ts-ignore
-  return JwtService.axios
-    .post('', { operationName, query, variables })
-    .then((response) => (operationName ? response.data.data?.[operationName] : response.data.data) || null);
+interface IQuery {
+  key: string;
+  id: string;
 }
+
+function getData<T>(path: string, query?: IQuery): Promise<T> {
+  const queryString = query == null ? '' : `?${query.key}=${query.id}`;
+  return JwtService.axios.get(`${path + queryString}`);
+}
+
+// eslint-disable-next-line @typescript-eslint/ban-types
+function postData<T>(path: string, json: Object, query?: IQuery): Promise<T> {
+  const queryString = query == null ? '' : `?${query.key}=${query.id}`;
+  return JwtService.axios.post(`${path + queryString}`, json);
+}
+
+export default {
+  getData,
+  postData,
+};
