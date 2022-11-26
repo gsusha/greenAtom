@@ -1,12 +1,12 @@
 import { configureStore } from '@reduxjs/toolkit';
 import pageReducers from '../pages/pageRedusers';
-import rootReduser from './rootReduser';
+import rootReducer from './rootReducer';
 
-(module as any).hot.accept(rootReduser, () => {
+(module as any).hot.accept(rootReducer, () => {
   // eslint-disable-next-line @typescript-eslint/no-var-requires,@typescript-eslint/ban-ts-comment
   // @ts-ignore
   // eslint-disable-next-line @typescript-eslint/no-var-requires
-  const newRootReducer = require(rootReduser).default;
+  const newRootReducer = require(rootReducer).default;
   store.replaceReducer(newRootReducer.createReducer());
 });
 

@@ -4,10 +4,12 @@ import TextField from '../../../components/textfield/textField';
 import Progress from '../../../components/progress/progress';
 import Button from '../../../components/button/button';
 import { CgArrowLongRight } from 'react-icons/cg';
+import UserLayout from '../../../layout/user/UserLayout';
 
 function FirstStep() {
   return (
     <form>
+    <UserLayout>
       <Title style={{ marginBottom: 10 }}>Шаг 1/3</Title>
       <Progress step={1} />
       <div className="description" style={{ marginBottom: 22 }}>
@@ -21,6 +23,7 @@ function FirstStep() {
       </div>
       <Button name="Дальше" to="/second" icon={<CgArrowLongRight />} />
     </form>
+    </UserLayout>
   );
 }
 
