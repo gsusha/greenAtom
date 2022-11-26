@@ -14,7 +14,8 @@ function UserMain() {
         Заполни форму и получи возможность начать карьеру в <span className="accent">крупной цифровой компании </span>
         ещё во время обучения в университете
       </div>
-      <Button href="#" name="Начать" icon={<CgArrowLongRight />} />
+
+      <Button name="Начать" to="/first" icon={<CgArrowLongRight />} />
     </div>
   );
 }
