@@ -1,8 +1,6 @@
 import { Route, Routes } from 'react-router-dom';
 import './App.css';
 import UserMain from './pages/user/index.tsx';
-import AdminMain from './pages/admin/index.tsx';
-import UserLayout from './layout/user/UserLayout.tsx';
 
 function App() {
   return (
