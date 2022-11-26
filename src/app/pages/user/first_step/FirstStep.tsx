@@ -12,6 +12,9 @@ function FirstStep() {
       <div className="description" style={{ marginBottom: 22 }}>
         Заполни <span>личные данные</span>:
       </div>
+      <div className="description" style={{ marginBottom: 22 }}>
+        И выбери <span>программу подготовки</span>, которая тебе интересна:
+      </div>
       <Button name="Дальше" to="/second" icon={<CgArrowLongRight />} />
     </div>
   );

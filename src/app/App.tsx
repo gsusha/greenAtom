@@ -5,13 +5,12 @@ import AdminMain from './pages/admin/';
 import UserLayout from './layout/user/UserLayout';
 import './assets/fonts/fonts.css';
 import imgStart from './assets/images/user_start.png';
+import imgEnd from './assets/images/user_end.jpg';
 import UserMain from './pages/user/main/UserMain';
 import FirstStep from './pages/user/first_step/FirstStep';
 import SecondStep from './pages/user/second_step/SecondStep';
 import ThirdStep from './pages/user/third_step/ThirdStep';
 import UserEnd from './pages/user/end/UserEnd';
-
-// import imgEnd from './assets/images/user_end.jpg';
 
 function App() {
   return (
@@ -51,7 +50,7 @@ function App() {
       <Route
         path="/end"
         element={
-          <UserLayout>
+          <UserLayout img={imgEnd}>
             <UserEnd />
           </UserLayout>
         }
