@@ -70,27 +70,19 @@ CRUD:
       phone: "",
       telegram: "",
       specialization: "",
-      inviterId: 0,
-      event: {
-        id: 0,
-        name: "",
-        date: ""
-      },
-      task1: {
-        id: 0,
-        answer: "",
-        task: {
+      inviterName: "",
+      answers: [
+        {
           id: 0,
-          title: "",
-          description: "",
-          answer: ""
+          answer: "",
+          task: {
+            id: 0,
+            title: "",
+            description: "",
+            answer: ""
+          },
         },
-      },
-      task2: { },
-      task3: { },
-      task4: { },
-      task5: { },
-      task6: { },
+      ],
     },
   }
 
