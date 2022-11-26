@@ -17,6 +17,8 @@ function UserMain() {
   const [loading, setLoading] = useState(true);
   const [noPromo, setNoPromo] = useState(false);
 
+  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+  // @ts-ignore
   const event = useAppSelector(({ event }) => event);
 
   const eventId = '2';
