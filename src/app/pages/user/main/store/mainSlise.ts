@@ -1,5 +1,5 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
-import { Event } from '../../../../models/index';
+import { Event } from '../../../../models';
 import apiMakeRequest from '../../../../api/api';
 
 export const getDetailEvent = createAsyncThunk<Event, string>('event/getDetail', async (id: string, { dispatch }) => {

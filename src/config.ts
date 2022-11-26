@@ -1,3 +1,3 @@
 export const apiConfig = {
-  apiUrl: 'https://api.choodoo.team',
+  apiUrl: 'https://api.choodoo.team/',
 };
