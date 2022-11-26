@@ -7,11 +7,7 @@ interface Props {
 }
 
 function UserLayout({ children }: Props) {
-  return (
-    <div className='user-layout'>
-      {children}
-    </div>
-  );
+  return <div className="user-layout">{children}</div>;
 }
 
 export default UserLayout;
