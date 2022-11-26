@@ -3,6 +3,7 @@ import './App.css';
 import UserMain from './pages/user/';
 import AdminMain from './pages/admin/';
 import UserLayout from './layout/user/UserLayout';
+import './assets/fonts/fonts.css';
 
 function App() {
   return (
