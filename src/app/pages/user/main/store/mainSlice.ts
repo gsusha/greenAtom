@@ -3,9 +3,7 @@ import { Event } from '../../../../models';
 import Api from '../../../../api/api';
 import Paths from '../../../../store/paths';
 
-export const getDetailEvent = createAsyncThunk<Event, string>('event/getDetail', async (id: string, { dispatch }) => {
-  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-  // @ts-ignore
+export const getDetailEvent = createAsyncThunk('event', async (id: string) => {
   return await Api.getData(Paths.EVENT_DETAIL, { key: 'id', id: id });
 });
 
@@ -26,7 +24,7 @@ const mainSlice = createSlice({
   initialState,
   reducers: {},
   extraReducers: {
-    [getDetailEvent.fulfilled.toString()]: (state, action) => ({ ...state, event: action.payload?.data }),
+    [getDetailEvent.fulfilled.toString()]: (state, action) => ({ ...state, event: action.payload.data }),
   },
 });
 
