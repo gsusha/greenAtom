@@ -1,6 +1,7 @@
-import * as React from "react"
+import * as React from 'react';
+
 function AdminMain() {
-  return(
+  return (
     <div>
       Admin
     </div>
