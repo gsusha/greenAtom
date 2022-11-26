@@ -11,7 +11,7 @@ function UserMain() {
       <img src={logo} alt="IT стажировки Росатома" />
       <Title style={{ marginBottom: 22, alignSelf: 'start' }}>Test title</Title>
       <div className="description" style={{ marginBottom: 44 }}>
-        Заполни форму и получи возможность начать карьеру в <span className="accent">крупной цифровой компании </span>
+        Заполни форму и получи возможность начать карьеру в <span>крупной цифровой компании </span>
         ещё во время обучения в университете
       </div>
 
