@@ -9,8 +9,8 @@ function Progress({ step }: Props) {
   return (
     <div className="progress">
       <div className="progress-item active" />
-      <div className={'progress-item' + (step > 1 ? 'active' : '')} />
-      <div className={'progress-item' + (step > 2 ? 'active' : '')} />
+      <div className={'progress-item' + (step > 1 ? ' active' : '')} />
+      <div className={'progress-item' + (step > 2 ? ' active' : '')} />
     </div>
   );
 }
