@@ -7,7 +7,7 @@ import './styles.scss';
 import { useAppDispatch, useAppSelector } from '../../../store/hooks';
 import { useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
-import { getDetailEvent } from './store/mainSlise';
+import { getDetailEvent } from './store/mainSlice';
 import { Circles } from 'react-loader-spinner';
 
 function UserMain() {
