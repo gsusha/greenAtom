@@ -40,25 +40,7 @@ function SecondStep() {
           variant4: 'string',
         }}
       </Question>
-      <Question>
-        {{
-          id: 0,
-          title: 'string string',
-          description: 'simple',
-          answer: 'string',
-          specialization: 'string',
-        }}
-      </Question>
-      <Question>
-        {{
-          id: 0,
-          title: 'string ... string',
-          description: 'fill',
-          answer: 'string',
-          specialization: 'string',
-        }}
-      </Question>
-      <Button to="/third" icon={<CgArrowLongRight />}>
+      <Button to="/third" icon={<CgArrowLongRight />} marginTop={50}>
         Дальше
       </Button>
     </UserLayout>
