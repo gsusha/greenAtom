@@ -1,3 +1,4 @@
+
 .user-main-wrapper {
   display: flex;
   flex-direction: column;
@@ -7,5 +8,30 @@
 
   img {
     margin-bottom: 44px;
+  }
+}
+
+.share {
+  text-align: center;
+
+  .share__title {
+    display: block;
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+
+  .share__buttons {
+    text-align: center;
+
+    button {
+      margin: 8px;
+    }
+  }
+
+  .share__desc {
+    text-align: left;
+    font-size: 14px;
+    line-height: 130%;
   }
 }
