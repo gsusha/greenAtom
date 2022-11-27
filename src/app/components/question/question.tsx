@@ -3,8 +3,6 @@ import './styles.scss';
 import reactStringReplace from 'react-string-replace';
 
 import { Task } from '../../models/task';
-import Checkbox from '../checkbox/checkbox';
-import Radio from '../radio/radio';
 import TextField from '../textfield/textField';
 
 interface IProps {

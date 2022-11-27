@@ -36,13 +36,7 @@ function EventCreate() {
     resolver: yupResolver(validationSchema) as any,
   });
 
-  const {
-    getValues,
-    trigger,
-    control,
-    reset,
-    formState: { errors },
-  } = methods;
+  const { getValues, trigger, control } = methods;
 
   console.log(getValues());
 

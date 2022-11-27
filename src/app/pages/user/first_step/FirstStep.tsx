@@ -32,19 +32,15 @@ function FirstStep() {
     return () => dispatch(newPerson());
   }, []);
 
-  const methods = useForm<Event>({
+  const methods = useForm<Person>({
     mode: 'onChange',
     defaultValues: {},
     resolver: yupResolver(validationSchema) as any,
   });
 
-  const {
-    getValues,
-    trigger,
-    control,
-    reset,
-    formState: { errors },
-  } = methods;
+  const { getValues, trigger, control, setValue, watch } = methods;
+
+  const form = watch();
 
   console.log(getValues());
 
@@ -94,6 +90,7 @@ function FirstStep() {
           <div className="description" style={{ marginBottom: 22 }}>
             Заполни <span>личные данные</span>:
           </div>
+
           <Controller
             name="name"
             control={control}
@@ -132,8 +129,8 @@ function FirstStep() {
             row
             aria-label="type"
             name="row-radio-buttons-group"
-            value={getValues().code_type}
-            onChange={(e, v) => setValue('code_type', v)}
+            value={getValues().specialization}
+            onChange={(e, v) => setValue('specialization', v)}
           >
             {specs.map((e, i) => (
               <FormControlLabel key={i} value={e.name} control={<Radio />} label={e.name} />
