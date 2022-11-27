@@ -8,6 +8,7 @@ import { useParams } from 'react-router-dom';
 import Loader from '../../../components/loader/loader';
 import { getEvents } from './store/eventsSlice';
 import EventCard from '../../../components/card/EventCard';
+import { formatDate } from '../../../utils/formatTime';
 
 function AdminMain() {
   const dispatch = useAppDispatch();
@@ -34,8 +35,9 @@ function AdminMain() {
       <Header logo={true}>Админ-панель</Header>
       <Title style={{ marginBottom: 44 }}>Мероприятия</Title>
       {events.map((e: { name: string; date: string }, i: React.Key | null | undefined) => {
-        return <EventCard key={i} name={e.name} date={e.date} />;
+        return <EventCard key={i} name={e.name} date={formatDate(e.date)} />;
       })}
+      {/*TODO: Кнопка добавить*/}
     </AdminLayout>
   );
 }

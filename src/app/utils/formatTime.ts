@@ -1,5 +1,3 @@
-import { format } from 'date-fns';
-
-export function formatDate(date: Date) {
-  return format(new Date(date), 'dd.MM');
+export function formatDate(date: string) {
+  return date.substring(2).split('-').reverse().join('.');
 }
