@@ -40,7 +40,7 @@ function SecondStep() {
           variant4: 'string',
         }}
       </Question>
-      <Button to="/third" icon={<CgArrowLongRight />} marginTop={50}>
+      <Button to="/form/third" icon={<CgArrowLongRight />} marginTop={50}>
         Дальше
       </Button>
     </UserLayout>

@@ -32,7 +32,7 @@ function ThirdStep() {
           specialization: 'string',
         }}
       </Question>
-      <Button to="/end" icon={<CgArrowLongRight />} marginTop={50}>
+      <Button to="/form/end" icon={<CgArrowLongRight />} marginTop={50}>
         Отправить
       </Button>
     </UserLayout>

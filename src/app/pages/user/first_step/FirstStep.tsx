@@ -138,7 +138,7 @@ function FirstStep() {
           </RadioGroup>
 
           <div onClick={handleSave}>
-            <Button to="/second" icon={<CgArrowLongRight />} marginTop={50}>
+            <Button to="/form/second" icon={<CgArrowLongRight />} marginTop={50}>
               Дальше
             </Button>
           </div>
