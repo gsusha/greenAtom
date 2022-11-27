@@ -43,7 +43,7 @@ function EventDetail() {
   return (
     <AdminLayout>
       <Header>О мероприятии</Header>
-      <Title style={{ marginBottom: 14 }}>{event.name}</Title>
+      <Title style={{ marginBottom: 22 }}>{event.name}</Title>
 
       <div className="event-stat">
         <div className="event-stat-top">
