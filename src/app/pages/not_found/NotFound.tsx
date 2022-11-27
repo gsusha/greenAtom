@@ -3,7 +3,6 @@ import Subtitle from '../../components/title/subtitle';
 import GreenLabLogo from '../../assets/images/greenlab_logo.svg';
 import RosatomLogo from '../../assets/images/rosatom_logo.svg';
 import './styles.scss';
-import Button from '../../components/button/button';
 
 function NotFound() {
   return (
