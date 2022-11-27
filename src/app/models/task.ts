@@ -4,8 +4,8 @@ export interface Task {
   description: string;
   answer: string;
   specialization: string;
-  variant1: string;
-  variant2: string;
-  variant3: string;
-  variant4: string;
+  variant1?: string;
+  variant2?: string;
+  variant3?: string;
+  variant4?: string;
 }

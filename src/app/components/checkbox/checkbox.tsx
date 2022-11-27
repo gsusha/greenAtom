@@ -6,14 +6,14 @@ interface IProps {
   children: string;
 }
 
-export default function Radio(props: IProps) {
+export default function Checkbox(props: IProps) {
   // TODO: на уровень выше и индекс
   const [isActive, setActive] = useState(false);
 
   return (
-    <label htmlFor={props.id} className={`radio ${isActive ? 'active' : ''}`} onClick={() => setActive(!isActive)}>
+    <label htmlFor={props.id} className={`checkbox ${isActive ? 'active' : ''}`} onClick={() => setActive(!isActive)}>
       {props.children}
-      <input id={props.id} name={props.id} type={'radio'} />
+      <input id={props.id} name={props.id} type={'checkbox'} />
     </label>
   );
 }

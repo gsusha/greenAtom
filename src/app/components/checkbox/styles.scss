@@ -1,6 +1,6 @@
 @import "../../utils/colors";
 
-.radio {
+.checkbox {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -13,7 +13,7 @@
   margin-bottom: 12px;
   font-size: 14px;
 
-  input[type="radio"] {
+  input[type="checkbox"] {
     display: block;
     width: 18px;
     height: 18px;
