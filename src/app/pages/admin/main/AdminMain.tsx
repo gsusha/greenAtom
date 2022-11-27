@@ -7,6 +7,7 @@ import { useAppDispatch, useAppSelector } from '../../../store/hooks';
 import { useParams } from 'react-router-dom';
 import Loader from '../../../components/loader/loader';
 import { getEvents } from './store/eventsSlice';
+import EventCard from '../../../components/card/EventCard';
 
 function AdminMain() {
   const dispatch = useAppDispatch();
@@ -32,6 +33,9 @@ function AdminMain() {
     <AdminLayout>
       <Header logo={true}>Админ-панель</Header>
       <Title style={{ marginBottom: 44 }}>Мероприятия</Title>
+      {events.map((e: { name: string; date: string }, i: React.Key | null | undefined) => {
+        return <EventCard key={i} name={e.name} date={e.date} />;
+      })}
     </AdminLayout>
   );
 }
