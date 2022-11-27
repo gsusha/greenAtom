@@ -7,5 +7,5 @@ interface Props {
 }
 
 export default function TextField(props: Props) {
-  return <input type={props.type} placeholder={props.children}></input>;
+  return <input type={props.type} placeholder={props.children} />;
 }

@@ -1,6 +1,7 @@
 import React from 'react';
 import Title from '../../../components/title/title';
 import TextField from '../../../components/textfield/textField';
+import Radio from '../../../components/radio/radio';
 import Progress from '../../../components/progress/progress';
 import Button from '../../../components/button/button';
 import { CgArrowLongRight } from 'react-icons/cg';
@@ -21,6 +22,12 @@ function FirstStep() {
         <div className="description" style={{ marginBottom: 22 }}>
           И выбери <span>программу подготовки</span>, которая тебе интересна:
         </div>
+        <Radio id={'Specialization'}>Case Lab ESB Express</Radio>
+        <Radio id={'Specialization'}>Case Lab SUPPORT</Radio>
+        <Radio id={'Specialization'}>Case Lab SAP Express</Radio>
+        <Radio id={'Specialization'}>Case Lab WEB</Radio>
+        <Radio id={'Specialization'}>Case Lab JavaScript</Radio>
+        <Radio id={'Specialization'}>Case Lab 1С</Radio>
         <Button name="Дальше" to="/second" icon={<CgArrowLongRight />} />
       </form>
     </UserLayout>

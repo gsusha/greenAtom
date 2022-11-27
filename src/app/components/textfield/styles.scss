@@ -1,6 +1,7 @@
 @import "../../utils/colors";
 
-input {
+input[type="text"],
+input[type="tel"] {
   display: block;
   width: 100%;
   height: 40px;
