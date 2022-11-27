@@ -19,7 +19,7 @@ function FirstStep() {
         <TextField type={'text'}>Имя *</TextField>
         <TextField type={'tel'}>Телефон *</TextField>
         <TextField type={'text'}>Telegram</TextField>
-        <div className="description" style={{ marginBottom: 22 }}>
+        <div className="description" style={{ marginBottom: 22, marginTop: 24 }}>
           И выбери <span>программу подготовки</span>, которая тебе интересна:
         </div>
         <Radio id={'Specialization'}>Case Lab ESB Express</Radio>
