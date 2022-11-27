@@ -21,6 +21,11 @@ function SecondStep() {
   // @ts-ignore
   const person = useAppSelector(({ toSecond }) => toSecond.person);
 
+  const eventId = new URLSearchParams(window.location.search).get('id');
+  console.log(eventId);
+  const inviterId = new URLSearchParams(window.location.search).get('inviterId');
+  console.log(inviterId);
+
   useEffect(() => {
     if (person.id) {
       setLoading(true);
@@ -71,7 +76,7 @@ function SecondStep() {
           variant4: 'string',
         }}
       </Question>
-      <Button to="/form/third" icon={<CgArrowLongRight />} marginTop={50}>
+      <Button to={`/form/third?id=${eventId}&inviterId=${inviterId}`} icon={<CgArrowLongRight />} marginTop={50}>
         Дальше
       </Button>
     </UserLayout>
