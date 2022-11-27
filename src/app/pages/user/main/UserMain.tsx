@@ -17,13 +17,14 @@ function UserMain() {
   const params = useParams() as { id: string };
 
   const [loading, setLoading] = useState(true);
-  const [noPromo, setNoPromo] = useState(false);
+  const [noEvent, setNoEvent] = useState(false);
 
   // eslint-disable-next-line @typescript-eslint/ban-ts-comment
   // @ts-ignore
   const event = useAppSelector(({ eventDetail }) => eventDetail.event);
 
   const eventId = '2';
+  //TODO: Поменять
 
   useEffect(() => {
     if (eventId) {
@@ -31,7 +32,7 @@ function UserMain() {
       dispatch(getDetailEvent(eventId))
         // eslint-disable-next-line @typescript-eslint/ban-ts-comment
         // @ts-ignore
-        .then((action) => !action.payload && setNoPromo(true))
+        .then((action) => !action.payload && setNoEvent(true))
         .finally(() => setLoading(false));
     } else {
       setLoading(false);
