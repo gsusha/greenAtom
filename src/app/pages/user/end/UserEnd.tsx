@@ -18,10 +18,11 @@ import {
   WhatsappShareButton,
 } from 'react-share';
 import Constants from '../../../utils/constants';
+import getIds from '../../../utils/getIds';
 
 function UserEnd() {
   // TODO: generate
-  const shareUrl = Constants.API_URL + '/form?id=0&inviterId=0';
+  const shareUrl = Constants.API_URL + '/form' + getIds(window);
 
   return (
     <UserLayout img={imgEnd}>

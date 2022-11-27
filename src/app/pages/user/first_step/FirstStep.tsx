@@ -15,6 +15,7 @@ import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup';
 import { createPerson, newPerson } from './store/firstSlice';
 import { FormControlLabel, Radio, RadioGroup } from '@mui/material';
+import getIds from '../../../utils/getIds';
 
 const validationSchema = yup.object().shape({
   name: yup.string().required().max(20, 'Слишком длинная строка'),
@@ -28,11 +29,6 @@ function FirstStep() {
 
   const [submit, setSubmit] = useState(false);
 
-  const eventId = new URLSearchParams(window.location.search).get('id');
-  console.log(eventId);
-  const inviterId = new URLSearchParams(window.location.search).get('inviterId');
-  console.log(inviterId);
-
   useEffect(() => {
     return () => dispatch(newPerson());
   }, []);
@@ -42,10 +38,14 @@ function FirstStep() {
 
   const methods = useForm<Person>({
     mode: 'onChange',
-    defaultValues: {
-      eventId: { eventId },
-      inviterId: { inviterId },
-    },
+    defaultValues: inviterId
+      ? {
+          eventId: eventId,
+          inviterId: inviterId,
+        }
+      : {
+          eventId: eventId,
+        },
     resolver: yupResolver(validationSchema) as any,
   });
 
@@ -88,6 +88,9 @@ function FirstStep() {
     },
     {
       name: 'Case Lab 1С',
+    },
+    {
+      name: 'Case Lab SAP',
     },
   ];
 
@@ -148,7 +151,7 @@ function FirstStep() {
           </RadioGroup>
 
           <div onClick={handleSave}>
-            <Button to={`/form/second?id=${eventId}`} icon={<CgArrowLongRight />} marginTop={50}>
+            <Button to={'/form/second' + getIds(window)} icon={<CgArrowLongRight />} marginTop={50}>
               Дальше
             </Button>
           </div>

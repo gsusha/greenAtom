@@ -9,6 +9,7 @@ import { useAppDispatch, useAppSelector } from '../../../store/hooks';
 import { useParams } from 'react-router-dom';
 import Loader from '../../../components/loader/loader';
 import { createPerson } from '../first_step/store/firstSlice';
+import getIds from '../../../utils/getIds';
 
 function SecondStep() {
   const dispatch = useAppDispatch();
@@ -20,11 +21,6 @@ function SecondStep() {
   // eslint-disable-next-line @typescript-eslint/ban-ts-comment
   // @ts-ignore
   const person = useAppSelector(({ toSecond }) => toSecond.person);
-
-  const eventId = new URLSearchParams(window.location.search).get('id');
-  console.log(eventId);
-  const inviterId = new URLSearchParams(window.location.search).get('inviterId');
-  console.log(inviterId);
 
   useEffect(() => {
     if (person.id) {
@@ -76,7 +72,7 @@ function SecondStep() {
           variant4: 'string',
         }}
       </Question>
-      <Button to={`/form/third?id=${eventId}&inviterId=${inviterId}`} icon={<CgArrowLongRight />} marginTop={50}>
+      <Button to={'/form/third' + getIds(window)} icon={<CgArrowLongRight />} marginTop={50}>
         Дальше
       </Button>
     </UserLayout>

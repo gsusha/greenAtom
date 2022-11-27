@@ -11,6 +11,7 @@ import { getDetailEvent } from './store/mainSlice';
 import imgStart from '../../../assets/images/user_start.png';
 import UserLayout from '../../../layout/user/UserLayout';
 import Loader from '../../../components/loader/loader';
+import getIds from '../../../utils/getIds';
 
 function UserMain() {
   const dispatch = useAppDispatch();
@@ -53,7 +54,7 @@ function UserMain() {
           ещё во время обучения в университете
         </div>
 
-        <Button to={`/form/first?id=${eventId}`} icon={<CgArrowLongRight />}>
+        <Button to={'/form/first' + getIds(window)} icon={<CgArrowLongRight />}>
           Начать
         </Button>
       </div>
