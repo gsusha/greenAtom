@@ -7,6 +7,7 @@ interface Props {
   to: string;
   icon?: ReactNode;
   marginTop?: number;
+  onClick?: () => void;
 }
 
 function Button({ children, to, icon, marginTop }: Props) {

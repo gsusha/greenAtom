@@ -16,7 +16,9 @@ function FirstStep() {
         <div className="description" style={{ marginBottom: 22 }}>
           Заполни <span>личные данные</span>:
         </div>
-        <TextField type={'text'}>Имя *</TextField>
+        <TextField type={'text'} onChange={(s) => console.log(s.type)}>
+          Имя *
+        </TextField>
         <TextField type={'tel'}>Телефон *</TextField>
         <TextField type={'text'}>Telegram</TextField>
         <div className="description" style={{ marginBottom: 22, marginTop: 24 }}>
