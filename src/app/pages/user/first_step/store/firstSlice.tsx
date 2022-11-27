@@ -6,8 +6,10 @@ import { Person } from '../../../../models';
 export const getPersonData = (v: Person) => ({
   name: v.name,
   phone: v.phone,
-  telegram: v.telegram,
+  telegram: v?.telegram,
   specialization: v.specialization,
+  event_id: v.eventId,
+  inviter_id: v?.inviterId,
 });
 
 export const createPerson = createAsyncThunk<Person[], { data: Person; id?: string }>(

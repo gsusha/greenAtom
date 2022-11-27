@@ -24,9 +24,8 @@ function UserMain() {
   const event = useAppSelector(({ eventDetail }) => eventDetail.event);
 
   const eventId = new URLSearchParams(window.location.search).get('id');
-  console.log(eventId);
   const inviterId = new URLSearchParams(window.location.search).get('inviterId');
-  console.log(inviterId);
+
   useEffect(() => {
     if (eventId) {
       setLoading(true);
@@ -54,7 +53,7 @@ function UserMain() {
           ещё во время обучения в университете
         </div>
 
-        <Button to={`/form/first?id=${eventId}&inviterId=${inviterId}`} icon={<CgArrowLongRight />}>
+        <Button to={`/form/first?id=${eventId}`} icon={<CgArrowLongRight />}>
           Начать
         </Button>
       </div>

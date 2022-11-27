@@ -37,17 +37,23 @@ function FirstStep() {
     return () => dispatch(newPerson());
   }, []);
 
+  const eventId = new URLSearchParams(window.location.search).get('id');
+  const inviterId = new URLSearchParams(window.location.search).get('inviterId');
+
   const methods = useForm<Person>({
     mode: 'onChange',
-    defaultValues: {},
+    defaultValues: {
+      eventId: { eventId },
+      inviterId: { inviterId },
+    },
     resolver: yupResolver(validationSchema) as any,
   });
 
   const { getValues, trigger, control, setValue, watch } = methods;
 
-  const form = watch();
-
   console.log(getValues());
+
+  const form = watch();
 
   const handleSave = () => {
     trigger().then((check) => {
@@ -61,7 +67,6 @@ function FirstStep() {
           console.log('Херня с пейлодом');
         } else {
           console.log('Не херня');
-          navigate('/form/second');
         }
         setSubmit(false);
       });
@@ -143,7 +148,7 @@ function FirstStep() {
           </RadioGroup>
 
           <div onClick={handleSave}>
-            <Button to={`/form/second?id=${eventId}&inviterId=${inviterId}`} icon={<CgArrowLongRight />} marginTop={50}>
+            <Button to={`/form/second?id=${eventId}`} icon={<CgArrowLongRight />} marginTop={50}>
               Дальше
             </Button>
           </div>
