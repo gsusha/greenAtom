@@ -1,6 +1,8 @@
 import React from 'react';
 import Subtitle from '../title/subtitle';
 import greenLabLogo from '../../assets/images/greenlab_logo.svg';
+import { useNavigate } from 'react-router-dom';
+import { FiChevronLeft } from 'react-icons/fi';
 
 interface Props {
   logo?: boolean;
@@ -8,9 +10,17 @@ interface Props {
 }
 
 function Header({ logo, children }: Props) {
+  const navigate = useNavigate();
+
   const getLogo = () => {
     if (logo) {
       return <img src={greenLabLogo} alt="img" width="87px" height="30px" />;
+    } else {
+      return (
+        <div onClick={() => navigate(-1)}>
+          <FiChevronLeft size={30} />
+        </div>
+      );
     }
   };
 
