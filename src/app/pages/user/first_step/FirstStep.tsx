@@ -28,6 +28,11 @@ function FirstStep() {
 
   const [submit, setSubmit] = useState(false);
 
+  const eventId = new URLSearchParams(window.location.search).get('id');
+  console.log(eventId);
+  const inviterId = new URLSearchParams(window.location.search).get('inviterId');
+  console.log(inviterId);
+
   useEffect(() => {
     return () => dispatch(newPerson());
   }, []);
