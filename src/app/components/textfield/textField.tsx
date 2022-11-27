@@ -2,6 +2,7 @@ import React, { ChangeEventHandler } from 'react';
 import './styles.scss';
 
 interface Props {
+  id?: string;
   type?: string;
   children?: string;
   onChange?: ChangeEventHandler<HTMLInputElement>;

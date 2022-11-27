@@ -9,6 +9,8 @@ import Loader from '../../../components/loader/loader';
 import { getEvents } from './store/eventsSlice';
 import EventCard from '../../../components/card/EventCard';
 import { formatDate } from '../../../utils/formatTime';
+import Button from '../../../components/button/button';
+import { HiPlus } from 'react-icons/hi';
 
 function AdminMain() {
   const dispatch = useAppDispatch();
@@ -48,7 +50,9 @@ function AdminMain() {
           </div>
         );
       })}
-      {/*TODO: Кнопка добавить*/}
+      <Button icon={<HiPlus />} to={'event/new'}>
+        Добавить
+      </Button>
     </AdminLayout>
   );
 }
