@@ -1,0 +1,48 @@
+@import "../../../utils/colors";
+
+.event-stat {
+  font-size: 14px;
+}
+
+.event-stat-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 14px;
+}
+
+.event-stat-bottom {
+  @extend .event-stat-top;
+  margin-bottom: 44px;
+}
+
+.event-stat-points {
+  display: flex;
+}
+.event-stat-point {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.event-stat-point:last-child {
+  margin-left: 14px;
+}
+
+.event-stat-point-circle {
+  width: 12px;
+  height: 12px;
+  background: $lightGreen;
+  margin-right: 6px;
+  border-radius: 50%;
+
+  &.blue {
+    background: $blue;
+  }
+}
+
+.event-stat-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}

@@ -4,7 +4,7 @@ import AdminLayout from '../../../layout/admin/AdminLayout';
 import Title from '../../../components/title/title';
 import Header from '../../../components/header/Header';
 import { useAppDispatch, useAppSelector } from '../../../store/hooks';
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import Loader from '../../../components/loader/loader';
 import { getEvents } from './store/eventsSlice';
 import EventCard from '../../../components/card/EventCard';
@@ -13,6 +13,7 @@ import { formatDate } from '../../../utils/formatTime';
 function AdminMain() {
   const dispatch = useAppDispatch();
   const params = useParams() as { id: string };
+  const navigate = useNavigate();
 
   const [loading, setLoading] = useState(true);
   // const [noEvents, setNoEvents] = useState(false);
@@ -26,6 +27,12 @@ function AdminMain() {
     dispatch(getEvents()).then(() => setLoading(false));
   }, [dispatch, params]);
 
+  const handleClick = (id: number) => {
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    // @ts-ignore
+    navigate(`event/detail?id=${id}`);
+  };
+
   if (loading) {
     return <Loader />;
   }
@@ -34,8 +41,12 @@ function AdminMain() {
     <AdminLayout>
       <Header logo={true}>Админ-панель</Header>
       <Title style={{ marginBottom: 44 }}>Мероприятия</Title>
-      {events.map((e: { name: string; date: string }, i: React.Key | null | undefined) => {
-        return <EventCard key={i} name={e.name} date={formatDate(e.date)} />;
+      {events.map((e: { id: number; name: string; date: string }, i: React.Key | null | undefined) => {
+        return (
+          <div onClick={() => handleClick(e.id)}>
+            <EventCard key={i} name={e.name} date={formatDate(e.date)} />
+          </div>
+        );
       })}
       {/*TODO: Кнопка добавить*/}
     </AdminLayout>

@@ -8,4 +8,9 @@
   border-radius: 10px;
   border: 1px solid $lightGrey;
   padding: 16px;
+
+  &:hover {
+    background: $lightGreen;
+    border: 1px solid $lightGreen;
+  }
 }
