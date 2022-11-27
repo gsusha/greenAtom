@@ -23,8 +23,6 @@ function UserMain() {
   // @ts-ignore
   const event = useAppSelector(({ eventDetail }) => eventDetail.event);
 
-  console.log(event);
-
   const eventId = '2';
 
   useEffect(() => {
