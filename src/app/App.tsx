@@ -15,11 +15,11 @@ import EventCreate from './pages/admin/event_create/EventCreate';
 function App() {
   return (
     <Routes>
-      <Route path="/" element={<UserMain />} />
-      <Route path="/first" element={<FirstStep />} />
-      <Route path="/second" element={<SecondStep />} />
-      <Route path="/third" element={<ThirdStep />} />
-      <Route path="/end" element={<UserEnd />} />
+      <Route path="/form" element={<UserMain />} />
+      <Route path="/form/first" element={<FirstStep />} />
+      <Route path="/form/second" element={<SecondStep />} />
+      <Route path="/form/third" element={<ThirdStep />} />
+      <Route path="/form/end" element={<UserEnd />} />
 
       <Route path="/admin" element={<AdminMain />} />
       <Route path="/admin/event" element={<AdminMain />} />

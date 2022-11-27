@@ -23,8 +23,8 @@ function UserMain() {
   // @ts-ignore
   const event = useAppSelector(({ eventDetail }) => eventDetail.event);
 
-  const eventId = '2';
-  //TODO: Поменять
+  const eventId = new URLSearchParams(window.location.search).get('id');
+  const inviterId = new URLSearchParams(window.location.search).get('inviterId');
 
   useEffect(() => {
     if (eventId) {

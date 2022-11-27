@@ -56,7 +56,7 @@ function FirstStep() {
           console.log('Херня с пейлодом');
         } else {
           console.log('Не херня');
-          navigate('second');
+          navigate('/second');
         }
         setSubmit(false);
       });
