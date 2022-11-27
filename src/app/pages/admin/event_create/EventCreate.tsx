@@ -14,7 +14,6 @@ import { Controller, FormProvider, useForm } from 'react-hook-form';
 import TextField from '../../../components/textfield/textField';
 import Button from '../../../components/button/button';
 import { HiPlus } from 'react-icons/hi';
-import InputMask from 'react-input-mask';
 
 const validationSchema = yup.object().shape({
   name: yup.string().required().max(50, 'errors.maxStringLen'),

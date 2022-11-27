@@ -1,29 +1,47 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import Api from '../../../../api/api';
 import Paths from '../../../../store/paths';
-import { Spec } from '../../../../models/spec';
+import { Event, Person } from '../../../../models';
 
-export const getSpec = createAsyncThunk('spec', async (id: string) => {
-  return await Api.getData(Paths.EVENT_DETAIL);
-  //TODO: Нужны специальности
+export const getPersonData = (v: Person) => ({
+  name: v.name,
+  phone: v.phone,
+  telegram: v.telegram,
+  specialization: v.specialization,
 });
 
-const initialState: Spec = {
+export const createPerson = createAsyncThunk<Event[], { data: Person; id?: string }>(
+  'person/create',
+  async ({ data }) => {
+    const variables = getPersonData(data);
+
+    return await Api.postData(Paths.PERSON_CREATE, variables);
+  }
+);
+
+const initialState: Person = {
   // eslint-disable-next-line @typescript-eslint/ban-ts-comment
   // @ts-ignore
-  spec: {
-    id: '',
+  person: {
     name: '',
+    phone: '',
+    telegram: '',
+    specialization: '',
   },
 };
 
-const firstSlice = createSlice({
-  name: 'spec',
+const toSecondSlice = createSlice({
+  name: 'person',
   initialState,
-  reducers: {},
-  extraReducers: {
-    [getSpec.fulfilled.toString()]: (state, action) => ({ ...state, event: action.payload.data }),
+  reducers: {
+    newPerson: (state) => {
+      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+      // @ts-ignore
+      state.person = initialState.person;
+    },
   },
 });
 
-export default firstSlice.reducer;
+export const { newPerson } = toSecondSlice.actions;
+
+export default toSecondSlice.reducer;

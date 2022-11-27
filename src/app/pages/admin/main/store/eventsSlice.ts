@@ -12,14 +12,11 @@ export const getEvents = createAsyncThunk('events', async () => {
   return await Api.getData(Paths.EVENT_LIST);
 });
 
-export const createEvent = createAsyncThunk<Event[], { data: Event; id?: string }>(
-  'hotel/createOrUpdate',
-  async ({ data }) => {
-    const variables = getEventData(data);
+export const createEvent = createAsyncThunk<Event[], { data: Event; id?: string }>('event/create', async ({ data }) => {
+  const variables = getEventData(data);
 
-    return await Api.postData(Paths.EVENT_CREATE, variables);
-  }
-);
+  return await Api.postData(Paths.EVENT_CREATE, variables);
+});
 
 const initialState: Event = {
   // eslint-disable-next-line @typescript-eslint/ban-ts-comment
