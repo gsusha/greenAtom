@@ -13,7 +13,9 @@ function SecondStep() {
       <div className="description" style={{ marginBottom: 22 }}>
         Заполни <span>личные данные</span>:
       </div>
-      <Button name="Дальше" to="/third" icon={<CgArrowLongRight />} />
+      <Button to="/third" icon={<CgArrowLongRight />}>
+        Дальше
+      </Button>
     </UserLayout>
   );
 }

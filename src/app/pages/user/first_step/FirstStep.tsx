@@ -28,7 +28,9 @@ function FirstStep() {
         <Radio id={'Specialization'}>Case Lab WEB</Radio>
         <Radio id={'Specialization'}>Case Lab JavaScript</Radio>
         <Radio id={'Specialization'}>Case Lab 1С</Radio>
-        <Button name="Дальше" to="/second" icon={<CgArrowLongRight />} />
+        <Button to="/second" icon={<CgArrowLongRight />} marginTop={50}>
+          Дальше
+        </Button>
       </form>
     </UserLayout>
   );

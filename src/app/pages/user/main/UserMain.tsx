@@ -52,7 +52,9 @@ function UserMain() {
           ещё во время обучения в университете
         </div>
 
-        <Button name="Начать" to="/first" icon={<CgArrowLongRight />} />
+        <Button to="/first" icon={<CgArrowLongRight />}>
+          Начать
+        </Button>
       </div>
     </UserLayout>
   );

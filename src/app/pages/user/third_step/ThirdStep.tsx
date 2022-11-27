@@ -13,7 +13,9 @@ function ThirdStep() {
       <div className="description" style={{ marginBottom: 22 }}>
         Заполни <span>личные данные</span>:
       </div>
-      <Button name="Отправить" to="/end" icon={<CgArrowLongRight />} />
+      <Button to="/end" icon={<CgArrowLongRight />}>
+        Отправить
+      </Button>
     </UserLayout>
   );
 }

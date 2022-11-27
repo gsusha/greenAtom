@@ -20,7 +20,9 @@ function UserEnd() {
             <span>оплачиваемую стажировку</span> в нашей компании!
           </div>
 
-          <Button name="Поделиться" to="/first" icon={<FaShareAlt />} />
+          <Button to="/first" icon={<FaShareAlt />}>
+            Поделиться
+          </Button>
         </div>
         <div>
           <img src={logo} alt="Rosatom logo" style={{ margin: 0 }} />
