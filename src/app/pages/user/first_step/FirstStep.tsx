@@ -56,7 +56,7 @@ function FirstStep() {
           console.log('Херня с пейлодом');
         } else {
           console.log('Не херня');
-          navigate('/second');
+          navigate('/form/second');
         }
         setSubmit(false);
       });
@@ -126,9 +126,9 @@ function FirstStep() {
           </div>
 
           <RadioGroup
-            row
+            column
             aria-label="type"
-            name="row-radio-buttons-group"
+            name="column-radio-buttons-group"
             value={getValues().specialization}
             onChange={(e, v) => setValue('specialization', v)}
           >
