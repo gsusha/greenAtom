@@ -1,0 +1,11 @@
+@import "../../utils/colors";
+
+.card-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  border-radius: 10px;
+  border: 1px solid $lightGrey;
+  padding: 16px;
+}
