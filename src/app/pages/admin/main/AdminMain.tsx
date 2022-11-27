@@ -1,11 +1,10 @@
 import * as React from 'react';
+import { useEffect, useState } from 'react';
 import AdminLayout from '../../../layout/admin/AdminLayout';
 import Title from '../../../components/title/title';
 import Header from '../../../components/header/Header';
 import { useAppDispatch, useAppSelector } from '../../../store/hooks';
 import { useParams } from 'react-router-dom';
-import { useEffect, useState } from 'react';
-import { getDetailEvent } from '../../user/main/store/mainSlice';
 import Loader from '../../../components/loader/loader';
 import { getEvents } from './store/eventsSlice';
 
