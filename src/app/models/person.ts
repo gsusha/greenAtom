@@ -5,5 +5,6 @@ export interface Person {
   telegram: string;
   specialization: string;
   eventId: number;
+  inviterId: number;
   answers: [];
 }

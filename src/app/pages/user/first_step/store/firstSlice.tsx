@@ -1,7 +1,7 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import Api from '../../../../api/api';
 import Paths from '../../../../store/paths';
-import { Event, Person } from '../../../../models';
+import { Person } from '../../../../models';
 
 export const getPersonData = (v: Person) => ({
   name: v.name,
@@ -10,7 +10,7 @@ export const getPersonData = (v: Person) => ({
   specialization: v.specialization,
 });
 
-export const createPerson = createAsyncThunk<Event[], { data: Person; id?: string }>(
+export const createPerson = createAsyncThunk<Person[], { data: Person; id?: string }>(
   'person/create',
   async ({ data }) => {
     const variables = getPersonData(data);
@@ -27,6 +27,8 @@ const initialState: Person = {
     phone: '',
     telegram: '',
     specialization: '',
+    eventId: '',
+    inviterId: '',
   },
 };
 
@@ -39,6 +41,9 @@ const toSecondSlice = createSlice({
       // @ts-ignore
       state.person = initialState.person;
     },
+  },
+  extraReducers: {
+    [createPerson.fulfilled.toString()]: (state, action) => ({ ...state, person: action.payload.data }),
   },
 });
 
