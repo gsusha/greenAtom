@@ -1,5 +1,5 @@
-import firstSlice from './firstSlice';
+import toSecondSlice from './firstSlice';
 
-const spec = firstSlice;
+const toSecond = toSecondSlice;
 
-export default spec;
+export default toSecond;
