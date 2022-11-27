@@ -6,5 +6,6 @@ export interface Person {
   specialization: string;
   eventId: number;
   inviterId: number;
+  tasks: [];
   answers: [];
 }

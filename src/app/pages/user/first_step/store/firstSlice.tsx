@@ -2,6 +2,7 @@ import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import Api from '../../../../api/api';
 import Paths from '../../../../store/paths';
 import { Person } from '../../../../models';
+import { Task } from '../../../../models/task';
 
 export const getPersonData = (v: Person) => {
   return {
@@ -30,6 +31,8 @@ const initialState: Person = {
     specialization: '',
     eventId: '',
     inviterId: '',
+    tasks: [],
+    answers: [],
   },
 };
 
@@ -44,7 +47,7 @@ const toSecondSlice = createSlice({
     },
   },
   extraReducers: {
-    [createPerson.fulfilled.toString()]: (state, action) => ({ ...state, person: action.payload.data }),
+    [createPerson.fulfilled.toString()]: (state, action) => ({ ...state, tasks: action.payload.data }),
   },
 });
 

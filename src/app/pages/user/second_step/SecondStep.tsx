@@ -1,3 +1,6 @@
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-nocheck
+
 import React, { useEffect, useState } from 'react';
 import Title from '../../../components/title/title';
 import Progress from '../../../components/progress/progress';
@@ -21,6 +24,11 @@ function SecondStep() {
   // eslint-disable-next-line @typescript-eslint/ban-ts-comment
   // @ts-ignore
   const person = useAppSelector(({ toSecond }) => toSecond.person);
+  const tasks = useAppSelector(({ toSecond }) => toSecond.tasks);
+
+  const orgTasks = Array.from(tasks[0]);
+
+  console.log(orgTasks);
 
   useEffect(() => {
     if (person.id) {
@@ -38,6 +46,8 @@ function SecondStep() {
   if (loading) {
     return <Loader />;
   }
+  //
+  // console.log(orgTasks.map();
 
   return (
     <UserLayout>
@@ -46,32 +56,21 @@ function SecondStep() {
       <div className="description" style={{ marginBottom: 22 }}>
         А сейчас несколько вопросов о нашей компании 🤔:
       </div>
-      <Question>
-        {{
-          id: 0,
-          title: 'string1',
-          description: 'checkbox',
-          answer: 'string',
-          specialization: 'string',
-          variant1: 'string',
-          variant2: 'undefined',
-          variant3: 'string',
-          variant4: 'string',
-        }}
-      </Question>
-      <Question>
-        {{
-          id: 0,
-          title: 'string2',
-          description: 'radio',
-          answer: 'string',
-          specialization: 'string',
-          variant1: 'string',
-          variant2: undefined,
-          variant3: 'string',
-          variant4: 'string',
-        }}
-      </Question>
+      {orgTasks.map((task, i) => (
+        <Question key={i}>
+          {{
+            id: task.id,
+            title: task.title,
+            description: task.description,
+            answer: task.answer,
+            specialization: task.specialization,
+            variant1: task.variant1,
+            variant2: task.variant2,
+            variant3: task.variant3,
+            variant4: task.variant4,
+          }}
+        </Question>
+      ))}
       <Button to={'/form/third' + getIds(window)} icon={<CgArrowLongRight />} marginTop={50}>
         Дальше
       </Button>
