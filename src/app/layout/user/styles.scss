@@ -1,6 +1,9 @@
 .user-layout-wrapper {
   display: flex;
   flex-direction: column;
+  max-width: 400px;
+  margin: auto;
+
   height: 100%;
 }
 
@@ -11,7 +14,7 @@
 }
 
 .user-layout-img {
-  width: 100vw;
+  width: 100%;
 
   img {
     width: 100%;
