@@ -1,4 +1,4 @@
-import React, { JSXElementConstructor, ReactNode } from 'react';
+import React, { ReactNode } from 'react';
 import './Card';
 import Card from './Card';
 
