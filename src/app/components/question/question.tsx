@@ -4,6 +4,8 @@ import reactStringReplace from 'react-string-replace';
 
 import { Task } from '../../models/task';
 import TextField from '../textfield/textField';
+import Checkbox from '../checkbox/checkbox';
+import Radio from '../radio/radio';
 
 interface IProps {
   children: Task;
@@ -19,17 +21,18 @@ export default function Question({ children }: IProps) {
   return ['radio', 'checkbox'].includes(children.description) ? (
     <div className={'question'}>
       <p className={'title'}>{children.title}</p>
-      {/*{variants.map((e: string, i) =>*/}
-      {/*  children.description === 'radio' ? (*/}
-      {/*    <Radio key={i} id={children.id.toString()}>*/}
-      {/*      {e}*/}
-      {/*    </Radio>*/}
-      {/*  ) : (*/}
-      {/*    <Checkbox key={i} id={children.id.toString()}>*/}
-      {/*      {e}*/}
-      {/*    </Checkbox>*/}
-      {/*  )*/}
-      {/*)}*/}
+      {variants.map((e: string, i) =>
+        children.description === 'radio' ? (
+          // <Radio key={i} id={children.id.toString()}>
+          //   {e}
+          // </Radio>
+          <></>
+        ) : (
+          <Checkbox key={i} id={children.id.toString()}>
+            {e}
+          </Checkbox>
+        )
+      )}
     </div>
   ) : (
     <div className={'question'}>
