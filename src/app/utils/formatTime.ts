@@ -1,4 +1,4 @@
 export function formatDate(date: string) {
-  console.log(date);
+  // TODO: тут было undefined, надо пересмотреть
   return date ? date.substring(2).split('-').reverse().join('.') : '';
 }
