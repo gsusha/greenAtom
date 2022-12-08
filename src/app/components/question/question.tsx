@@ -16,19 +16,18 @@ export default function Question({ children }: IProps) {
     .filter((e) => e)
     .map((e: string | undefined) => e ?? '');
 
-  const fillableTitle = reactStringReplace(children.title, '...', (match) => <TextField />);
+  const fillableTitle = reactStringReplace(children.title, '...', () => <TextField />);
 
   return ['radio', 'checkbox'].includes(children.description) ? (
     <div className={'question'}>
       <p className={'title'}>{children.title}</p>
-      {variants.map((e: string, i) =>
+      {variants.map((e, i) =>
         children.description === 'radio' ? (
-          // <Radio key={i} id={children.id.toString()}>
-          //   {e}
-          // </Radio>
-          <></>
+          <Radio key={i} id={children.id}>
+            {e}
+          </Radio>
         ) : (
-          <Checkbox key={i} id={children.id.toString()}>
+          <Checkbox key={i} id={children.id}>
             {e}
           </Checkbox>
         )
