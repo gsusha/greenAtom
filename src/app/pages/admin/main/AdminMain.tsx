@@ -32,7 +32,7 @@ function AdminMain() {
   const handleClick = (id: number) => {
     // eslint-disable-next-line @typescript-eslint/ban-ts-comment
     // @ts-ignore
-    navigate(`event/detail?id=${id}`);
+    navigate(`event?id=${id}`);
   };
 
   if (loading) {

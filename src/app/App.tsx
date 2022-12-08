@@ -11,6 +11,7 @@ import AdminMain from './pages/admin/main/AdminMain';
 import NotFound from './pages/not_found/NotFound';
 import EventDetail from './pages/admin/event_detail/EventDetail';
 import EventCreate from './pages/admin/event_create/EventCreate';
+import PersonDetail from './pages/admin/person_detail/PersonDetail';
 
 function App() {
   return (
@@ -22,10 +23,9 @@ function App() {
       <Route path="/form/end" element={<UserEnd />} />
 
       <Route path="/admin" element={<AdminMain />} />
-      <Route path="/admin/event" element={<AdminMain />} />
+      <Route path="/admin/event" element={<EventDetail />} />
       <Route path="/admin/event/new" element={<EventCreate />} />
-      <Route path="/admin/event/detail" element={<EventDetail />} />
-      <Route path="/admin/person" element={<AdminMain />} />
+      <Route path="/admin/person" element={<PersonDetail />} />
 
       <Route path="*" element={<NotFound />} />
     </Routes>

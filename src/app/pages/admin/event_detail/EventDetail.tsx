@@ -31,6 +31,12 @@ function EventDetail() {
 
   const eventId = new URLSearchParams(window.location.search).get('id');
 
+  const handleClick = (id: number) => {
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    // @ts-ignore
+    navigate(`person?id=${id}`);
+  };
+
   useEffect(() => {
     if (eventId) {
       setLoading(true);
