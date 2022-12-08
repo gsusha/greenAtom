@@ -21,14 +21,13 @@ export default function Question({ children }: IProps) {
   return ['radio', 'checkbox'].includes(children.description) ? (
     <div className={'question'}>
       <p className={'title'}>{children.title}</p>
-      {variants.map((e: string, i) =>
+      {variants.map((e, i) =>
         children.description === 'radio' ? (
-          // <Radio key={i} id={children.id.toString()}>
-          //   {e}
-          // </Radio>
-          <></>
+          <Radio key={i} id={children.id}>
+            {e}
+          </Radio>
         ) : (
-          <Checkbox key={i} id={children.id.toString()}>
+          <Checkbox key={i} id={children.id}>
             {e}
           </Checkbox>
         )

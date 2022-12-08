@@ -43,7 +43,7 @@ function SecondStep() {
           id: 3,
           title:
             'В 2014 были сформированы единые корпоративные ценности компании. Выберите какой из перечисленных вариантов туда входят.',
-          description: 'radio',
+          description: 'checkbox',
           answer: 'Все вышеперечисленное',
           specialization: '-',
           variant1: 'Уважение',
