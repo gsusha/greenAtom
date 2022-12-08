@@ -1,6 +1,5 @@
 import * as React from 'react';
 import Title from '../../../components/title/title';
-import { FaShareAlt } from 'react-icons/fa';
 import logo from '../../../assets/images/rosatom_logo.svg';
 import imgEnd from '../../../assets/images/user_end.jpg';
 import UserLayout from '../../../layout/user/UserLayout';
@@ -18,11 +17,11 @@ import {
   WhatsappShareButton,
 } from 'react-share';
 import Constants from '../../../utils/constants';
-import getIds from '../../../utils/getIds';
+import { getPath } from '../../../utils/getParams';
 
 function UserEnd() {
   // TODO: generate
-  const shareUrl = Constants.API_URL + '/form' + getIds(window);
+  const shareUrl = Constants.API_URL + '/form' + getPath(window);
 
   return (
     <UserLayout img={imgEnd}>

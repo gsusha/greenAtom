@@ -5,7 +5,7 @@ import Button from '../../../components/button/button';
 import { CgArrowLongRight } from 'react-icons/cg';
 import UserLayout from '../../../layout/user/UserLayout';
 import Question from '../../../components/question/question';
-import getIds from '../../../utils/getIds';
+import { getPath } from '../../../utils/getParams';
 
 function SecondStep() {
   return (
@@ -52,7 +52,7 @@ function SecondStep() {
           variant4: 'Все вышеперечисленное',
         }}
       </Question>
-      <Button to={'/form/third' + getIds(window)} icon={<CgArrowLongRight />} marginTop={50}>
+      <Button to={'/form/third' + getPath(window)} icon={<CgArrowLongRight />} marginTop={50}>
         Дальше
       </Button>
     </UserLayout>

@@ -15,7 +15,7 @@ import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup';
 import { createPerson, newPerson } from './store/firstSlice';
 import { FormControlLabel, Radio, RadioGroup } from '@mui/material';
-import getIds from '../../../utils/getIds';
+import { getPath } from '../../../utils/getParams';
 
 const validationSchema = yup.object().shape({
   name: yup.string().required().max(20, 'Слишком длинная строка'),
@@ -151,7 +151,7 @@ function FirstStep() {
           </RadioGroup>
 
           <div onClick={handleSave}>
-            <Button to={'/form/second' + getIds(window)} icon={<CgArrowLongRight />} marginTop={50}>
+            <Button to={'/form/second' + getPath(window)} icon={<CgArrowLongRight />} marginTop={50}>
               Дальше
             </Button>
           </div>

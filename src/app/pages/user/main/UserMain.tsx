@@ -11,7 +11,7 @@ import { getDetailEvent } from './store/mainSlice';
 import imgStart from '../../../assets/images/user_start.png';
 import UserLayout from '../../../layout/user/UserLayout';
 import Loader from '../../../components/loader/loader';
-import getIds from '../../../utils/getIds';
+import { getPath } from '../../../utils/getParams';
 
 function UserMain() {
   const dispatch = useAppDispatch();
@@ -31,8 +31,6 @@ function UserMain() {
     if (eventId) {
       setLoading(true);
       dispatch(getDetailEvent(eventId))
-        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-        // @ts-ignore
         .then((action) => !action.payload && setNoEvent(true))
         .finally(() => setLoading(false));
     } else {
@@ -54,7 +52,7 @@ function UserMain() {
           ещё во время обучения в университете
         </div>
 
-        <Button to={'/form/first' + getIds(window)} icon={<CgArrowLongRight />}>
+        <Button to={'/form/first' + getPath(window)} icon={<CgArrowLongRight />}>
           Начать
         </Button>
       </div>

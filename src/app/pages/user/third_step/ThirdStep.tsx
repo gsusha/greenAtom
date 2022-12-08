@@ -5,7 +5,7 @@ import Button from '../../../components/button/button';
 import { CgArrowLongRight } from 'react-icons/cg';
 import UserLayout from '../../../layout/user/UserLayout';
 import Question from '../../../components/question/question';
-import getIds from '../../../utils/getIds';
+import { getPath } from '../../../utils/getParams';
 
 function ThirdStep() {
   return (
@@ -33,7 +33,7 @@ function ThirdStep() {
           specialization: 'string',
         }}
       </Question>
-      <Button to={'/form/end' + getIds(window)} icon={<CgArrowLongRight />} marginTop={50}>
+      <Button to={'/form/end' + getPath(window)} icon={<CgArrowLongRight />} marginTop={50}>
         Отправить
       </Button>
     </UserLayout>
