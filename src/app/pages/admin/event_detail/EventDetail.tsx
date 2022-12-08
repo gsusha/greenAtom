@@ -1,16 +1,16 @@
 import * as React from 'react';
+import { useEffect, useState } from 'react';
 import AdminLayout from '../../../layout/admin/AdminLayout';
 import Header from '../../../components/header/Header';
 import { useAppDispatch, useAppSelector } from '../../../store/hooks';
 import { useParams } from 'react-router-dom';
-import { useEffect, useState } from 'react';
 import { getDetailEvent } from '../../user/main/store/mainSlice';
 import Loader from '../../../components/loader/loader';
 import Title from '../../../components/title/title';
 import { formatDate } from '../../../utils/formatTime';
 import './styles.scss';
-import Card from '../../../components/card/Card';
 import PersonCard from '../../../components/card/PersonCard';
+import { Person } from '../../../models';
 
 function EventDetail() {
   const dispatch = useAppDispatch();
@@ -25,6 +25,9 @@ function EventDetail() {
   const event = eventDetail.event;
   const members = eventDetail.person;
   const countOfOpens = eventDetail.statistic?.count;
+  const invitedCount = members?.map((e: Person) => e.inviter_id).filter((e: string) => !!e).length;
+
+  console.log(invitedCount);
 
   const eventId = new URLSearchParams(window.location.search).get('id');
 
@@ -60,7 +63,7 @@ function EventDetail() {
             </div>
             <div className="event-stat-point">
               <div className="event-stat-point-circle blue" />
-              <div> n вовлечённых</div>
+              <div>{invitedCount} вовлечённых</div>
             </div>
           </div>
         </div>
@@ -72,13 +75,9 @@ function EventDetail() {
         </div>
       </div>
 
-      {
-        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-        // @ts-ignore
-        members.map((e) => {
-          return <PersonCard isInvited={!!e.inviterId} name={e.name} />;
-        })
-      }
+      {members.map((e: Person, i: React.Key) => {
+        return <PersonCard key={i} isInvited={!!e.inviter_id} name={e.name} />;
+      })}
     </AdminLayout>
   );
 }

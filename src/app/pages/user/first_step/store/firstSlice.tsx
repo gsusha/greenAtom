@@ -2,7 +2,6 @@ import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import Api from '../../../../api/api';
 import Paths from '../../../../store/paths';
 import { Person } from '../../../../models';
-import { Task } from '../../../../models/task';
 
 export const getPersonData = (v: Person) => {
   return {
@@ -10,8 +9,8 @@ export const getPersonData = (v: Person) => {
     phone: v.phone,
     telegram: v?.telegram,
     specialization: v.specialization,
-    eventId: v.eventId,
-    inviterId: v?.inviterId,
+    event_id: v.event_id,
+    inviter_id: v?.inviter_id,
   };
 };
 
