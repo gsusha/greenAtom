@@ -12,13 +12,13 @@ export default function Checkbox(props: IProps) {
 
   return (
     <label
-      htmlFor={props.id.toString()}
+      htmlFor={props.children}
       className={'checkbox ' + (isActive ? 'active' : '')}
       onClick={() => setActive(!isActive)}
     >
       {props.children}
       <input
-        id={props.id.toString()}
+        id={props.children}
         name={props.id.toString()}
         value={props.children}
         onChange={props.onChange}
