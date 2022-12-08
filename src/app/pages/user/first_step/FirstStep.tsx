@@ -14,7 +14,6 @@ import { Controller, FormProvider, useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup';
 import { createPerson, newPerson } from './store/firstSlice';
-import { FormControlLabel, Radio, RadioGroup } from '@mui/material';
 import getIds from '../../../utils/getIds';
 
 const validationSchema = yup.object().shape({
@@ -138,17 +137,17 @@ function FirstStep() {
             И выбери <span>программу подготовки</span>, которая тебе интересна:
           </div>
 
-          <RadioGroup
-            column
-            aria-label="type"
-            name="column-radio-buttons-group"
-            value={getValues().specialization}
-            onChange={(e, v) => setValue('specialization', v)}
-          >
-            {specs.map((e, i) => (
-              <FormControlLabel key={i} value={e.name} control={<Radio />} label={e.name} />
-            ))}
-          </RadioGroup>
+          {/*<RadioGroup*/}
+          {/*  column*/}
+          {/*  aria-label="type"*/}
+          {/*  name="column-radio-buttons-group"*/}
+          {/*  value={getValues().specialization}*/}
+          {/*  onChange={(e, v) => setValue('specialization', v)}*/}
+          {/*>*/}
+          {/*  {specs.map((e, i) => (*/}
+          {/*    <FormControlLabel key={i} value={e.name} control={<Radio />} label={e.name} />*/}
+          {/*  ))}*/}
+          {/*</RadioGroup>*/}
 
           <div onClick={handleSave}>
             <Button to={'/form/second' + getIds(window)} icon={<CgArrowLongRight />} marginTop={50}>

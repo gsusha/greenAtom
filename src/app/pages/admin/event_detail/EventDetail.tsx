@@ -9,6 +9,8 @@ import Loader from '../../../components/loader/loader';
 import Title from '../../../components/title/title';
 import { formatDate } from '../../../utils/formatTime';
 import './styles.scss';
+import Card from '../../../components/card/Card';
+import PersonCard from '../../../components/card/PersonCard';
 
 function EventDetail() {
   const dispatch = useAppDispatch();
@@ -19,7 +21,10 @@ function EventDetail() {
 
   // eslint-disable-next-line @typescript-eslint/ban-ts-comment
   // @ts-ignore
-  const event = useAppSelector(({ eventDetail }) => eventDetail.event);
+  const eventDetail = useAppSelector(({ eventDetail }) => eventDetail.event);
+  const event = eventDetail.event;
+  const members = eventDetail.person;
+  const countOfOpens = eventDetail.statistic?.count;
 
   const eventId = new URLSearchParams(window.location.search).get('id');
 
@@ -51,7 +56,7 @@ function EventDetail() {
           <div className="event-stat-points">
             <div className="event-stat-point">
               <div className="event-stat-point-circle" />
-              <div>n участников</div>
+              <div>{members?.length} участников</div>
             </div>
             <div className="event-stat-point">
               <div className="event-stat-point-circle blue" />
@@ -61,11 +66,19 @@ function EventDetail() {
         </div>
         <div className="event-stat-bottom">
           <div>
-            Кол-во открытий ссылки: <span>n</span>
+            Кол-во открытий ссылки: <span>{countOfOpens}</span>
           </div>
           <div>Конверсия: n</div>
         </div>
       </div>
+
+      {
+        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+        // @ts-ignore
+        members.map((e) => {
+          return <PersonCard isInvited={!!e.inviterId} name={e.name} />;
+        })
+      }
     </AdminLayout>
   );
 }
