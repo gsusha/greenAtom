@@ -31,6 +31,8 @@ function UserMain() {
     if (eventId) {
       setLoading(true);
       dispatch(getDetailEvent(eventId))
+        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+        // @ts-ignore
         .then((action) => !action.payload && setNoEvent(true))
         .finally(() => setLoading(false));
     } else {
