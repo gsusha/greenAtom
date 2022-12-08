@@ -18,6 +18,7 @@ function EventDetail() {
 
   const [loading, setLoading] = useState(true);
   const [noEvent, setNoEvent] = useState(false);
+  const [filter, setFilter] = useState(false);
 
   // eslint-disable-next-line @typescript-eslint/ban-ts-comment
   // @ts-ignore
@@ -25,9 +26,8 @@ function EventDetail() {
   const event = eventDetail.event;
   const members = eventDetail.person;
   const countOfOpens = eventDetail.statistic?.count;
+  const conversion = ((members?.length / countOfOpens) * 100).toFixed(0);
   const invitedCount = members?.map((e: Person) => e.inviter_id).filter((e: string) => !!e).length;
-
-  console.log(invitedCount);
 
   const eventId = new URLSearchParams(window.location.search).get('id');
 
@@ -71,13 +71,24 @@ function EventDetail() {
           <div>
             Кол-во открытий ссылки: <span>{countOfOpens}</span>
           </div>
-          <div>Конверсия: n</div>
+          <div>Конверсия: {conversion}%</div>
         </div>
       </div>
 
-      {members.map((e: Person, i: React.Key) => {
-        return <PersonCard key={i} isInvited={!!e.inviter_id} name={e.name} />;
-      })}
+      <div className="filter">
+        <button className={'filter-btn ' + (!filter ? 'active' : '')} onClick={() => setFilter(false)}>
+          Все
+        </button>
+        <button className={'filter-btn ' + (filter ? 'active' : '')} onClick={() => setFilter(true)}>
+          Вовлечённые
+        </button>
+      </div>
+
+      {members
+        .filter((e: Person) => (filter ? !!e.inviter_id : true))
+        .map((e: Person) => (
+          <PersonCard key={e.id} isInvited={!!e.inviter_id} name={e.name} />
+        ))}
     </AdminLayout>
   );
 }
