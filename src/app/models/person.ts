@@ -4,8 +4,8 @@ export interface Person {
   phone: string;
   telegram: string;
   specialization: string;
-  eventId: number;
-  inviterId: number;
+  event_id: number;
+  inviter_id: string;
   tasks: [];
   answers: [];
 }

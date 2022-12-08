@@ -7,7 +7,9 @@ import './styles.scss';
 function NotFound() {
   return (
     <div className="not-found-wrapper">
-      <img src={GreenLabLogo} alt="Green Lab Logo" />
+      <a href="https://edu.greenatom.ru/">
+        <img src={GreenLabLogo} alt="Green Lab Logo" />
+      </a>
       <div className="not-found-center">
         <div className="not-found-number">
           4<span>0</span>4
@@ -18,5 +20,7 @@ function NotFound() {
     </div>
   );
 }
+
+//TODO: сделать компонент для ссылок по лого
 
 export default NotFound;
