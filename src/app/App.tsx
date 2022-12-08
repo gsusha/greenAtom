@@ -25,7 +25,8 @@ function App() {
       <Route path="/admin" element={<AdminMain />} />
       <Route path="/admin/event" element={<EventDetail />} />
       <Route path="/admin/event/new" element={<EventCreate />} />
-      <Route path="/admin/person" element={<PersonDetail />} />
+      <Route path="/admin/event" element={<EventDetail />} />
+      <Route path="/admin/event/person" element={<PersonDetail />} />
 
       <Route path="*" element={<NotFound />} />
     </Routes>

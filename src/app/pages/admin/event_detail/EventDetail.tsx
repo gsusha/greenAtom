@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 import AdminLayout from '../../../layout/admin/AdminLayout';
 import Header from '../../../components/header/Header';
 import { useAppDispatch, useAppSelector } from '../../../store/hooks';
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import { getDetailEvent } from '../../user/main/store/mainSlice';
 import Loader from '../../../components/loader/loader';
 import Title from '../../../components/title/title';
@@ -15,6 +15,7 @@ import { Person } from '../../../models';
 function EventDetail() {
   const dispatch = useAppDispatch();
   const params = useParams() as { id: string };
+  const navigate = useNavigate();
 
   const [loading, setLoading] = useState(true);
   const [noEvent, setNoEvent] = useState(false);
@@ -93,7 +94,9 @@ function EventDetail() {
       {members
         .filter((e: Person) => (filter ? !!e.inviter_id : true))
         .map((e: Person) => (
-          <PersonCard key={e.id} isInvited={!!e.inviter_id} name={e.name} />
+          <div onClick={() => handleClick(e.id)}>
+            <PersonCard key={e.id} isInvited={!!e.inviter_id} name={e.name} />
+          </div>
         ))}
     </AdminLayout>
   );
