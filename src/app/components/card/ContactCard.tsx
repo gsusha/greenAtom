@@ -9,7 +9,7 @@ interface Props {
 
 function ContactCard({ icon, content }: Props) {
   return (
-    <Card style={{ justifyContent: 'center' }}>
+    <Card style={{ justifyContent: 'center', marginBottom: 10 }}>
       {icon}
       <div style={{ marginLeft: 8 }}>{content}</div>
     </Card>

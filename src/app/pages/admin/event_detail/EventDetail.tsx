@@ -11,6 +11,7 @@ import { formatDate } from '../../../utils/formatTime';
 import './styles.scss';
 import PersonCard from '../../../components/card/PersonCard';
 import { Person } from '../../../models';
+import PersonDetail from '../person_detail/PersonDetail';
 
 function EventDetail() {
   const dispatch = useAppDispatch();
@@ -94,8 +95,8 @@ function EventDetail() {
       {members
         .filter((e: Person) => (filter ? !!e.inviter_id : true))
         .map((e: Person) => (
-          <div onClick={() => handleClick(e.id)}>
-            <PersonCard key={e.id} isInvited={!!e.inviter_id} name={e.name} />
+          <div key={e.id} onClick={() => handleClick(e.id)}>
+            <PersonCard isInvited={!!e.inviter_id} name={e.name} />
           </div>
         ))}
     </AdminLayout>
