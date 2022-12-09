@@ -14,8 +14,7 @@ import { Controller, FormProvider, useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup';
 import { createPerson, newPerson } from './store/firstSlice';
-import { FormControlLabel, Radio, RadioGroup } from '@mui/material';
-import { getPath } from '../../../utils/getParams';
+import { getEventId, getInviterId, getPath } from '../../../utils/getParams';
 
 const validationSchema = yup.object().shape({
   name: yup.string().required().max(20, 'Слишком длинная строка'),
@@ -33,8 +32,8 @@ function FirstStep() {
     return () => dispatch(newPerson());
   }, []);
 
-  const eventId = new URLSearchParams(window.location.search).get('id');
-  const inviterId = new URLSearchParams(window.location.search).get('inviterId');
+  const eventId = getEventId(window);
+  const inviterId = getInviterId(window);
 
   const methods = useForm<Person>({
     mode: 'onChange',
