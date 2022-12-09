@@ -11,7 +11,8 @@ import { formatDate } from '../../../utils/formatTime';
 import './styles.scss';
 import PersonCard from '../../../components/card/PersonCard';
 import { Person } from '../../../models';
-import PersonDetail from '../person_detail/PersonDetail';
+import { getConversion } from '../../../utils/stats';
+import { getEventId } from '../../../utils/getParams';
 
 function EventDetail() {
   const dispatch = useAppDispatch();
@@ -27,11 +28,13 @@ function EventDetail() {
   const eventDetail = useAppSelector(({ eventDetail }) => eventDetail.event);
   const event = eventDetail.event;
   const members = eventDetail.person;
+
   const countOfOpens = eventDetail.statistic?.count;
-  const conversion = ((members?.length / countOfOpens) * 100).toFixed(0);
   const invitedCount = members?.map((e: Person) => e.inviter_id).filter((e: string) => !!e).length;
 
-  const eventId = new URLSearchParams(window.location.search).get('id');
+  const conversion = getConversion(members?.length, countOfOpens);
+
+  const eventId = getEventId(window);
 
   const handleClick = (id: number) => {
     // eslint-disable-next-line @typescript-eslint/ban-ts-comment

@@ -1,6 +1,6 @@
 @import "../../utils/colors";
 
-.radio {
+.selector {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -13,19 +13,20 @@
   margin-bottom: 12px;
   font-size: 14px;
 
-  input[type="radio"] {
+  input[type="radio"],
+  input[type="checkbox"] {
     display: block;
     width: 18px;
     height: 18px;
     margin: 0;
-    accent-color: #6fb22f;
+    accent-color: $darkGreen;
 
     &:active,
     &:focus {
     }
   }
-}
 
-.active {
-  border: 1px $lightGreen solid;
+  &.active {
+    border: 1px $lightGreen solid;
+  }
 }

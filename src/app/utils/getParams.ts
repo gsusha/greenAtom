@@ -1,8 +1,7 @@
 // TODO: храним ID не тут, а где-то в сторе
 function getPath(window: Window): string {
-  const params = new URLSearchParams(window.location.search);
-  const eventId = getEventId(params);
-  const inviterId = getInviterId(params);
+  const eventId = getEventId(window);
+  const inviterId = getInviterId(window);
 
   let str = '';
   if (eventId || inviterId) str += '?';
@@ -12,14 +11,14 @@ function getPath(window: Window): string {
   return str;
 }
 
-function getEventId(params: URLSearchParams): number {
-  const eventId = params.get('id');
-  return Number(eventId);
+function getEventId(window: Window): string {
+  const params = new URLSearchParams(window.location.search);
+  return <string>params.get('id');
 }
 
-function getInviterId(params: URLSearchParams): number {
-  const inviterId = params.get('inviterId');
-  return Number(inviterId);
+function getInviterId(window: Window): string {
+  const params = new URLSearchParams(window.location.search);
+  return <string>params.get('inviterId');
 }
 
 export { getPath, getEventId, getInviterId };

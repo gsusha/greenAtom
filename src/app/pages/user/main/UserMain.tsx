@@ -11,7 +11,7 @@ import { getDetailEvent } from './store/mainSlice';
 import imgStart from '../../../assets/images/user_start.png';
 import UserLayout from '../../../layout/user/UserLayout';
 import Loader from '../../../components/loader/loader';
-import { getPath } from '../../../utils/getParams';
+import { getEventId, getInviterId, getPath } from '../../../utils/getParams';
 
 function UserMain() {
   const dispatch = useAppDispatch();
@@ -24,8 +24,8 @@ function UserMain() {
   // @ts-ignore
   const event = useAppSelector(({ eventDetail }) => eventDetail.event);
 
-  const eventId = new URLSearchParams(window.location.search).get('id');
-  const inviterId = new URLSearchParams(window.location.search).get('inviterId');
+  const eventId = getEventId(window);
+  const inviterId = getInviterId(window);
 
   useEffect(() => {
     if (eventId) {
