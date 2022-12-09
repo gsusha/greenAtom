@@ -43,13 +43,15 @@ function AdminMain() {
     <AdminLayout>
       <Header logo={true}>Админ-панель</Header>
       <Title style={{ marginBottom: 44 }}>Мероприятия</Title>
-      {events.map((e: { id: number; name: string; date: string }, i: React.Key | null | undefined) => {
-        return (
-          <div onClick={() => handleClick(e.id)}>
-            <EventCard key={i} name={e.name} date={formatDate(e.date)} />
-          </div>
-        );
-      })}
+      <div style={{ marginBottom: 44 }}>
+        {events.map((e: { id: number; name: string; date: string }, i: React.Key | null | undefined) => {
+          return (
+            <div onClick={() => handleClick(e.id)}>
+              <EventCard key={i} name={e.name} date={formatDate(e.date)} />
+            </div>
+          );
+        })}
+      </div>
       <Button icon={<HiPlus />} to={'event/new'}>
         Добавить
       </Button>
