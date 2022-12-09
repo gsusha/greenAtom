@@ -13,7 +13,7 @@ export default function Radio(props: IProps) {
   return (
     <label
       htmlFor={props.children}
-      className={'radio ' + (isActive ? 'active' : '')}
+      className={'selector ' + (isActive ? 'active' : '')}
       onClick={() => setActive(!isActive)}
     >
       {props.children}

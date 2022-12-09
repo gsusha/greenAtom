@@ -4,8 +4,8 @@ import reactStringReplace from 'react-string-replace';
 
 import { Task } from '../../models/task';
 import TextField from '../textfield/textField';
-import Checkbox from '../checkbox/checkbox';
-import Radio from '../radio/radio';
+import Checkbox from '../selector/checkbox';
+import Radio from '../selector/radio';
 
 interface IProps {
   children: Task;
@@ -16,7 +16,7 @@ export default function Question({ children }: IProps) {
     .filter((e) => e)
     .map((e: string | undefined) => e ?? '');
 
-  const fillableTitle = reactStringReplace(children.title, '...', () => <TextField />);
+  const fillableTitle = reactStringReplace(children.title, '...', () => <TextField type="text" />);
 
   return ['radio', 'checkbox'].includes(children.description) ? (
     <div className={'question'}>
@@ -36,7 +36,7 @@ export default function Question({ children }: IProps) {
   ) : (
     <div className={'question'}>
       <p className={'title'}>{children.description == 'simple' ? children.title : fillableTitle}</p>
-      {children.description == 'simple' ? <TextField /> : <></>}
+      {children.description == 'simple' ? <TextField type="text" /> : <></>}
     </div>
   );
 }

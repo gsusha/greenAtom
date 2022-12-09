@@ -13,7 +13,7 @@ export default function Checkbox(props: IProps) {
   return (
     <label
       htmlFor={props.children}
-      className={'checkbox ' + (isActive ? 'active' : '')}
+      className={'selector ' + (isActive ? 'active' : '')}
       onClick={() => setActive(!isActive)}
     >
       {props.children}

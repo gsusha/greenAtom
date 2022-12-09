@@ -66,9 +66,9 @@
     font-style: normal;
     font-weight: 700;
     font-size: 24px;
-  }
 
-  .active {
-    color: $darkGrey;
+    &.active {
+      color: $darkGrey;
+    }
   }
 }
